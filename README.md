@@ -7,15 +7,17 @@ Through this assignment, we strive to introduce the basics of creating, training
 
 ## How to Navigate this Repository
 
-The assignment is located under the 'Homework' directory while the notes and slide deck can be found under 'Documentation'. Obviously, the homework requires moderate levels of comprehension of the notes and slides to begin. Within the homework directory, there are two directories, 'Problems' which contains the problems/tasks that are given to the student and 'Solutions' which contains possible answers to the coding and conceptual questions. The order in which we expect students to complete this is as following (with intended time written adjacently):
+The the notes and slide deck can be found under 'Documentation'. Obviously, the homework requires moderate levels of comprehension of the notes and slides to begin. For homework, there are two directories, 'Problems' which contains the problems/tasks that are given to the student and 'Solution' which contains possible answers to the coding and conceptual questions. The order in which we expect students to complete this is as following (with intended time written adjacently):
 
-* 'Problem 1 - Pythagorean Distance' (1 hour)
+* 'Problem 1 - Pythagorean Distance' (45 minutes)
 * 'Problem 2 - MNIST Classification Walkthrough' (1.5 hours)
 * 'Task 1' (1.5 hours)
-* 'Task 2' (2 hours)
-* 'Task 3' (2 hours)
+* 'Task 2' (1.5 hours)
+* 'Task 3' (1.5 hours)
+* 'Problem 3 - Apache Spark Walkthrough' (45 minutes)
+* 'Task 4' (1.5 hours)
 
-The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy, any implementation is acceptable. 
+The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy or effort, any implementation is acceptable. 
 
 Finally, the quiz to check comprehension is located under the 'Quiz' directory. 
 
@@ -37,3 +39,9 @@ Especially when working in large-scale projects, the skill of being able to look
 Therefore, to wrap up Keras development, in 'Task 2' we provide a pre-implemented model for a fairly basic input/output relationship which seems to not perform particularly well. The student, using all the information gained in the previous parts about the strengths/weaknesses of neural networks, can experiment around with the code until they find out how to tweak it to signficantly improve its accuracy. Its intentional that the generated dataset is fairly large to make sure the student is reserved in how many changes they attempt: in projects with terabytes of training data, experimentation must be smart to assure time is not wasted. 
 
 Finally, in 'Task 3', we allow the student to explore a seemingly complex Keras model that is adapted from the U-Net architecture convolutional neural network (CNN). This provides a good opportunity for this student to parse the innerworkings and technical details of such a network without understanding the motivations behind its creation. We ask the student to explore the network and ask some generic questions regarding convolutional neural networks as well. One of the more important tools introduced in this task is to diagram a pre-written model, which is important within the machine learning community as a visualization tool as well as a great way to understand networks.
+
+## Objective 4: Spark Introduction
+
+Another very powerful tool that will be introduced this week is Apache Spark which allows for a lot of parrallized computation. Although the underlying data structure behind it behaves similarly to a pandas dataframe, the commands are fairly niche and students are likely to have never seen many of them before. That's why we start off the journey with a very segmented 'Problem 3 - Apache Spark Walkthrough.' In this, each subtask has a simple 1-3 line solution, but you might have to refer to the notes or pyspark documentation to figure it out. It starts off with some basic data processing and then goes on to implementing a linear regression model. 
+
+Then, as the student is more familiar with Spark, in 'Task 4' they can begin to explore a little more, trying different regression techniques or applying feature engineering/scaling skills from previous weeks in the Spark framework to improve the performance of the model from Problem 3.
