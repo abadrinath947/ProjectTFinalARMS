@@ -19,6 +19,8 @@ The the notes and slide deck can be found under 'Documentation'. Obviously, the 
 
 The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy or effort, any implementation is acceptable. 
 
+Also, Problem 3 and Task 4 are meant to be run on Kaggle since the dataset is already there and pyspark is much easier to download there as well.
+
 Finally, the quiz to check comprehension is located under the 'Quiz' directory. 
 
 ## Objective 1: Introduction to Keras
