@@ -17,7 +17,7 @@ The the notes and slide deck can be found under 'Documentation'. Obviously, the 
 * 'Problem 3 - Apache Spark Walkthrough' (45 minutes)
 * 'Task 4' (1.5 hours)
 
-The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy, any implementation is acceptable. 
+The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy or effort, any implementation is acceptable. 
 
 Finally, the quiz to check comprehension is located under the 'Quiz' directory. 
 
