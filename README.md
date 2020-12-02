@@ -21,7 +21,7 @@ The naming is such that the "problems" are far more guided with more skeleton co
 
 Also, Problem 3 and Task 4 are meant to be run on Kaggle since the dataset is already there and pyspark is much easier to download there as well.
 
-Finally, the quiz to check comprehension is located under the 'Quiz' directory. 
+Finally, the quiz to check comprehension is located under the 'Quiz' directory with solutions in 'Solution'. 
 
 ## Objective 1: Introduction to Keras
 
