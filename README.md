@@ -9,10 +9,11 @@ Through this assignment, we strive to introduce the basics of creating, training
 
 The assignment is located under the 'Homework' directory while the notes and slide deck can be found under 'Documentation'. Obviously, the homework requires moderate levels of comprehension of the notes and slides to begin. Within the homework directory, there are two directories, 'Problems' which contains the problems/tasks that are given to the student and 'Solutions' which contains possible answers to the coding and conceptual questions. The order in which we expect students to complete this is as following (with intended time written adjacently):
 
-* 'Problem 1 - Pythagorean Distance' (45 minutes)
-* 'Problem 2 - MNIST Classification Walkthrough' (1.5 hour)
-* 'Task 1' (1.5 hour)
-* 'Task 2' (45 minutes)
+* 'Problem 1 - Pythagorean Distance' (1 hour)
+* 'Problem 2 - MNIST Classification Walkthrough' (1.5 hours)
+* 'Task 1' (1.5 hours)
+* 'Task 2' (2 hours)
+* 'Task 3' (2 hours)
 
 The naming is such that the "problems" are far more guided with more skeleton code while "tasks" are more freeform with a few hints of what to try. The solutions for the tasks, especially task 1, are just one in many that work. As long as the student achieves the desired level of accuracy, any implementation is acceptable. 
 
@@ -29,7 +30,10 @@ After somewhat showing that neural network regression works, we try to apply Ker
 With all this knowledge at hand, we then transition to a much more hands on exercise, 'Task 1.' In this one, we provide various hints for how to improve the accuracy of the model, but then let the student free to explore their own ideas. Here, we also link to the Keras documentation so that they get a sense of what its like to read about and implement new features from any ML libraries they might encounter online. Although the task is fairly difficult, completing is should feel very eye-opening and rewarding.
 
 
-## Objective 3: Debugging Keras Models
+## Objective 3: Exploring and Debugging Keras Models
 
-Especially when working in large-scale projects, the skill of being able to look through models and get a sense of how they work and how to improve them is crucial. Therefore, to wrap up Keras, in 'Task 2' we provide a pre-implemented model for a fairly basic input/output relationship which seems to not perform particularly well. The student, using all the information gained in the previous parts about the strengths/weaknesses of neural networks, can experiment around with the code until they find out how to tweak it to signficantly improve its accuracy. Its intentional that the generated dataset is fairly large to make sure the student is reserved in how many changes they attempt: in projects with terabytes of training data, experimentation must be smart to assure time is not wasted. 
+Especially when working in large-scale projects, the skill of being able to look through models and get a sense of how they work and how to improve them is crucial. As a result, we propose two tasks that allow the student to both explore, understand, and debug Keras models that may even be slightly difficult to understand. The student's ability to make sense out of seemingly difficult-looking or challenging networks is one of the more important skills in applying this machine learning framework in the real world.
 
+Therefore, to wrap up Keras development, in 'Task 2' we provide a pre-implemented model for a fairly basic input/output relationship which seems to not perform particularly well. The student, using all the information gained in the previous parts about the strengths/weaknesses of neural networks, can experiment around with the code until they find out how to tweak it to signficantly improve its accuracy. Its intentional that the generated dataset is fairly large to make sure the student is reserved in how many changes they attempt: in projects with terabytes of training data, experimentation must be smart to assure time is not wasted. 
+
+Finally, in 'Task 3', we allow the student to explore a seemingly complex Keras model that is adapted from the U-Net architecture convolutional neural network (CNN). This provides a good opportunity for this student to parse the innerworkings and technical details of such a network without understanding the motivations behind its creation. We ask the student to explore the network and ask some generic questions regarding convolutional neural networks as well. One of the more important tools introduced in this task is to diagram a pre-written model, which is important within the machine learning community as a visualization tool as well as a great way to understand networks.
