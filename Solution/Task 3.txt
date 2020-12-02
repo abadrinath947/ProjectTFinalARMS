@@ -1,39 +1,90 @@
-1) Draw a diagram of the convolutional neural network provided in the code. Note that this model uses the functional model, which essentially behaves similarly to a linked list of layers. Refer to the note for examples on how to implement and reason with these models.
+1) Draw a diagram of the convolutional neural network provided in the code. 
+Note that this model uses the functional model, which essentially behaves 
+similarly to a linked list of layers. Refer to the note for examples on how to 
+implement and reason with these models.
 
 Refer to the attached diagram.
 
-2) Discuss a potential reason why the number of filters stays the same with each convolution in the first half of the model. Why do we implement pooling in the model?
+2) Discuss a potential reason why the number of filters stays the same with 
+each convolution in the first half of the model. Why do we implement pooling in 
+the model?
 
-The number of filters remains the same potentially because of the overfitting issues introduced by an increasing number of filters as the model progresses. With a 28x28 input space, we won't want to have too many filters per convolutional layer. We implement pooling to extract the most important spatial features that are extracted by the convolutional layer. This is mentioned in the note.
+The number of filters remains the same potentially because of the overfitting 
+issues introduced by an increasing number of filters as the model progresses. 
+With a 28x28 input space, we won't want to have too many filters per 
+convolutional layer. We implement pooling to extract the most important spatial 
+features that are extracted by the convolutional layer. This is mentioned in 
+the note.
 
 3) What could be a side effect of pooling too much in this model?
 
-The input space is quite small (28x28), so we could run out of dimensions on the first two axes. As a result, we strike a balance between selecting the most important spatial features and maintaining an amount of input data.
+The input space is quite small (28x28), so we could run out of dimensions on 
+the first two axes. As a result, we strike a balance between selecting the most 
+important spatial features and maintaining an amount of input data.
 
-4) Find the depth of this model. Consider one convolutional layer as one layer as opposed to the combination of convolutional layers and pooling layers as one layer.
+4) Find the depth of this model. Consider one convolutional layer as one layer 
+as opposed to the combination of convolutional layers and pooling layers as one 
+layer.
 
-Each layer is counted as a line of code, so we simply count the lines of code in the network: around 19-24. There is a range of potential answers because concatenation and cropping may not be considered a layer for many whereas it may for some others.
+Each layer is counted as a line of code, so we simply count the lines of code 
+in the network: around 19-24. There is a range of potential answers because 
+concatenation and cropping may not be considered a layer for many whereas it 
+may for some others.
 
-5) What purpose could the calls to concatenate serve? What kinds of layers are we concatenating with each other?
+5) What purpose could the calls to concatenate serve? What kinds of layers are 
+we concatenating with each other?
 
-Concatenation serves to add previously discovered spatial features at a later time in a concept known as a skipped connection. We are concatenating layers in such a way that forms a U-shape, as per the name of the model. For example, the first processed layer is concatenated with the last convolutional layer, the second processed is concatenated with the second last convolutional layer, and so on.
+Concatenation serves to add previously discovered spatial features at a later 
+time in a concept known as a skipped connection. We are concatenating layers in 
+such a way that forms a U-shape, as per the name of the model. For example, the 
+first processed layer is concatenated with the last convolutional layer, the 
+second processed is concatenated with the second last convolutional layer, and 
+so on.
 
-6) What kind of activation function is most prevalent? Is this typical or atypical of a convolutional neural network?
+6) What kind of activation function is most prevalent? Is this typical or 
+atypical of a convolutional neural network?
 
-The RELU activation function is most prevalent. This is typical of a convolutional network as mentioned in the note.
+The RELU activation function is most prevalent. This is typical of a 
+convolutional network as mentioned in the note.
 
-7) Discuss why this Keras model utilizes a Dropout layer and what potential side effects may be.
+7) Discuss why this Keras model utilizes a Dropout layer and what potential 
+side effects may be.
 
-The Dropout layer is typically used when the network becomes quite large or the data is quite complex; both of these could lead to spurious pattern detection by the neural network. The Dropout layer effectively regularizes the 
+The Dropout layer is typically used when the network becomes quite large or the 
+data is quite complex; both of these could lead to spurious pattern detection 
+by the neural network. The Dropout layer effectively regularizes the 
 
-8) Why do we use a sigmoid activation function near the end of the network? How is this related to the normalization technique that is employed?
+8) Why do we use a sigmoid activation function near the end of the network? How 
+is this related to the normalization technique that is employed?
 
-The sigmoid activation function serves to most closely emulate the output variable's range of values, between 0 and 1. 
+The sigmoid activation function serves to most closely emulate the output 
+variable's range of values, between 0 and 1. 
 
 9) Discuss potential improvements to the model or any red flags.
 
-There are quite a few red flags. This appears to be quite a complex model for such a simple dataset with seemingly not too many spatial features - this would violate Occam's Razor if it performed similarly to a simpler model. It turns out that nearly any even moderately complex model will perform within a 0.5% margin with regards to test error, so this does violate Occam's Razor. Another potential answer is perhaps the suboptimal and naive way of normalizing the input data; ultimately, this won't really affect the accuracy in any meaningful way, but it is good practice to normalize with respect to the mean and standard deviation.
+There are quite a few red flags. This appears to be quite a complex model for 
+such a simple dataset with seemingly not too many spatial features - this would 
+violate Occam's Razor if it performed similarly to a simpler model. It turns 
+out that nearly any even moderately complex model will perform within a 0.5% 
+margin with regards to test error, so this does violate Occam's Razor. Another 
+potential answer is perhaps the suboptimal and naive way of normalizing the 
+input data; ultimately, this won't really affect the accuracy in any meaningful 
+way, but it is good practice to normalize with respect to the mean and standard 
+deviation.
 
 10) Run the model. What is the test accuracy? Why does this make sense?
 
-The test accuracy should be around 99.85%. This makes sense largely because of the complexity of the model and the background in the note states that this model is one of the most renowned convolutional neural networks. A complex answer delving into the specifics of the U-Net architecture is not necessary here, but we include a brief overview of the reason for its performance regardless. The U-Net architecture has two phases: the contraction phase and expansion phase. In the contracting phase, we explore as many spatial features as possible by repeatedly applying convolutions and pooling: this is similar to most traditional machine learning frameworks. In the expanding phase, we apply these spatial features and rescale (or upscale) the data using these features. In the case of the MNIST U-Net, we will then apply fully connected layers to the flattened structure to turn it into a set of probabilities. Typically, the U-Net is not used for classification tasks, but its power is quite impressive with it regardless.
+The test accuracy should be around 99.85%. This makes sense largely because of 
+the complexity of the model and the background in the note states that this 
+model is one of the most renowned convolutional neural networks. A complex 
+answer delving into the specifics of the U-Net architecture is not necessary 
+here, but we include a brief overview of the reason for its performance 
+regardless. The U-Net architecture has two phases: the contraction phase and 
+expansion phase. In the contracting phase, we explore as many spatial features 
+as possible by repeatedly applying convolutions and pooling: this is similar to 
+most traditional machine learning frameworks. In the expanding phase, we apply 
+these spatial features and rescale (or upscale) the data using these features. 
+In the case of the MNIST U-Net, we will then apply fully connected layers to 
+the flattened structure to turn it into a set of probabilities. Typically, the 
+U-Net is not used for classification tasks, but its power is quite impressive 
+with it regardless.
