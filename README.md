@@ -23,7 +23,7 @@ Finally, the quiz to check comprehension is located under the 'Quiz' directory w
 
 ## Environments
 
-All of these problems require a fair amount of computation and memory so, while a few of them can be run on DataHub, we suggest uploading Problem 1-2 and Task 1-3 to Google Collab and running it on there (using the file upload feature to upload the required datasets). For Problem 3 and Task 4, the main library that is explored in pyspark. Installation of this library locally or on Google Collab can be fairly involved so we decided instead to use Kaggle instead. The student should be able to just use the Kaggle "copy and edit" function and easily start coding without having to download any additional libraries or datasets. 
+All of these problems require a fair amount of computation and memory so, while a few of them can be run on DataHub, we suggest uploading Problem 1-2 and Task 1-3 to Google Collab and running it on there (using the file upload feature to upload the required datasets). For Problem 3 and Task 4, the main library that is explored in pyspark. Installation of this library locally or on Google Collab can be fairly involved so we decided instead to use Kaggle instead. Both problems have links to their respective Kaggle notebooks. The student should be able to just use the Kaggle "copy and edit" function and easily start coding without having to download any additional libraries or datasets. 
 
 ## Objective 1: Introduction to Keras
 
