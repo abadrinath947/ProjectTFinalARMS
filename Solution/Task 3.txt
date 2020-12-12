@@ -88,3 +88,57 @@ In the case of the MNIST U-Net, we will then apply fully connected layers to
 the flattened structure to turn it into a set of probabilities. Typically, the 
 U-Net is not used for classification tasks, but its power is quite impressive 
 with it regardless.
+
+11) Uncomment sections of the code as it specifies in the model framework
+to remove/add model compression. What does this refer to? What do you expect
+to happen?
+
+We expect the dimension of the input to stay relatively constant throughout
+the training process since we removed the pooling layers. This should not affect
+the training or testing loss by a signficant amount in this MNIST task, but
+it could very well reduce the learning capabilities of a generic convolutional
+neural network since pooling layers can identify the most prominent feature sets.
+
+12) Run the model with the parts of the code commented out as in part (k). 
+What is the test accuracy? Explain your observations.
+
+The test accuracy is nearly the same as before, with a slight dip to 99.8%.
+Depending on the randomization of the run, it can fluctuate anywhere from
+99.65% to 99.85% and typically can even outperform the model with pooling.
+This is due to the reason that MNIST is not such a big task such that the
+importance of features being extracted is as important to a model's success.
+
+13) Reflect on the complexity of the Keras functional model. How does this
+model compare to models you have created in Task 1 and previous Problems?
+Is it possible to develop this model as a Sequential model?
+
+No, this is not possible. This is the entire reason for the development of
+the functional API in Keras. This model is not only far more complex but
+involves more stages and more peculiar setup to make work properly. For example,
+the Cropping2D layer is required because of size mismatches during convolutional
+padding. Such attention to detail is required when constructing such complex
+models.
+
+14) What does the get_crop_shape function do?
+
+The crop shape function returns the optimal size to crop both layers such that
+neither needs to "generate" more pixels.
+
+15) How could you adapt this model for regression? Explain.
+
+Remove the Dense layers for spatial regression or replace the activation function
+for vector regression.
+
+16) Explain what the UpSampling layer does. Speculate as to why it may be included
+in a classification problem.
+
+This is part of the U-Net framework, which is typically used for regression tasks.
+In this case, we may want to include it to express spatial features as part of the
+upsampling phase. As long as the student answer makes sense, award full credit for
+this question.
+
+17) Explain why softmax outperforms all other activation functions for this task.
+
+Softmax is the typical loss function for classification and the only one that is
+applicable for multiclass classification (i.e. binary CE will only work for the 
+binary 0/1 classification case).
